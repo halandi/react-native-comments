@@ -57,6 +57,9 @@ export default class Comments extends PureComponent {
     this.renderLike = this.renderLike.bind(this);
   }
 
+  getStyle = name =>
+    this.props.styles && this.props.styles[name] ? this.props.styles[name] : {};
+
   setLikesModalVisible(visible) {
     this.setState({ likesModalVisible: visible });
   }
