@@ -327,26 +327,29 @@ export default class Comments extends PureComponent {
               <View>
                 {this.props.childPropName &&
                 this.props.childrenCountExtractor(item) >
-                  item[this.props.childPropName].length ? (
-                  <TouchableHighlight
-                    onPress={() =>
-                      this.paginate(
-                        this.getFirstChildCommentId(item),
-                        "down",
-                        this.props.keyExtractor(item)
-                      )
-                    }
-                  >
-                    <Text
-                      style={[
-                        { textAlign: "center", paddingTop: 15 },
-                        this.getStyle("previousText")
-                      ]}
-                    >
-                      Show previous...
-                    </Text>
-                  </TouchableHighlight>
-                ) : null}
+                  item[this.props.childPropName].length ? 
+                  null
+                //   (
+                //   <TouchableHighlight
+                //     onPress={() =>
+                //       this.paginate(
+                //         this.getFirstChildCommentId(item),
+                //         "down",
+                //         this.props.keyExtractor(item)
+                //       )
+                //     }
+                //   >
+                //     <Text
+                //       style={[
+                //         { textAlign: "center", paddingTop: 15 },
+                //         this.getStyle("previousText")
+                //       ]}
+                //     >
+                //       Show previous...
+                //     </Text>
+                //   </TouchableHighlight>
+                // ) 
+                : null}
 
                 {this.renderChildren(
                   item[this.props.childPropName],
@@ -450,27 +453,30 @@ export default class Comments extends PureComponent {
         {!this.state.loadingComments &&
         this.props.data &&
         this.props.data.length &&
-        this.props.paginateAction ? (
-          <TouchableHighlight
-            onPress={() => {
-              this.paginate(
-                this.props.keyExtractor(this.props.data[0]),
-                "down"
-              );
-            }}
-          >
-            <View>
-              <Text
-                style={[
-                  { textAlign: "center", color: "gray" },
-                  this.getStyle("previousText")
-                ]}
-              >
-                Show previous
-              </Text>
-            </View>
-          </TouchableHighlight>
-        ) : null}
+        this.props.paginateAction ? 
+        null
+        // (
+        //   <TouchableHighlight
+        //     onPress={() => {
+        //       this.paginate(
+        //         this.props.keyExtractor(this.props.data[0]),
+        //         "down"
+        //       );
+        //     }}
+        //   >
+        //     <View>
+        //       <Text
+        //         style={[
+        //           { textAlign: "center", color: "gray" },
+        //           this.getStyle("previousText")
+        //         ]}
+        //       >
+        //         Show previous
+        //       </Text>
+        //     </View>
+        //   </TouchableHighlight>
+        // )
+         : null}
         {/* Comments */}
         {this.props.data ? (
           <FlatList
